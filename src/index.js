@@ -1,6 +1,7 @@
-// import {  } from "";
+import React from "react";
+import { render } from "react-dom";
 
-// Video 02 configurando edtrutura 1
-const soma = (a, b) => a + b;
+// render(<h1>Hello World metodo 1</h1>, document.getElementById('app')); //inseri o conteudo dentro do elemento app depois de carregar a pagina // Video 03 criando componente raiz
 
-alert(soma(1, 4));
+import App from './App' //Video 03
+render(<App />,document.getElementById('app')) //Video 03

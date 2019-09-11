@@ -4,7 +4,7 @@ module.exports = {
     es6: true,
   },
   extends: [
-    'airbnb',
+    'airbnb', 'prettier'
   ],
   globals: {
     Atomics: 'readonly',
@@ -18,8 +18,13 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'react',
+    'react','prettier'
   ],
   rules: {
+    "prettier/prettier": "error",
+    "class-methods-use-this": "off",
+    "no-param-reassign": "off",
+    "camelcase": "off",
+    "no-unused-vars": ["error", { "argsIgorePattern": "next" }],
   },
 };
