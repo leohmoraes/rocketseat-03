@@ -2,8 +2,10 @@
 import React from 'react';
 import './App.css';
 
+import profile from './assets/teste.gif'; //video 05
+
 function App() {
-  return <h1>Hello World App OK</h1>;
+  return <img width="600px" src={profile} /> 
   // Precisa importar o React sempre !
 }
 
