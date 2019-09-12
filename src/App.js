@@ -1,5 +1,6 @@
 // Video 03 criando componente raiz
 import React from 'react';
+import './App.css';
 
 function App() {
   return <h1>Hello World App OK</h1>;
