@@ -1,4 +1,16 @@
 import React, { Component } from 'react';
+import TechItem from './TechItem';
+
+
+/**
+ * O componente em formato de classe, pode ter estado e variaveis
+ * que sao alteradas via metodos existentes,
+ * estes metodos devem estar neste mesmo componente.
+ * Ao contrario do componente em formato de funcao
+ * que nao consegue acessar as variaveis de outro componente
+ * e pode receber variaveis, objetos, classes, componente e funcoes via propriedade do elemento
+ * ....
+ **/
 
 class TechList extends Component {
     state = { // todo o estado/STATE é imutável
@@ -63,12 +75,19 @@ class TechList extends Component {
                 <ul>
                     {this.state.techs.map(
                         tech => 
-                        ( // para colocar em mais linhas, use um parenteses
-                            <li key={tech}>
-                                {tech} 
-                                <button onClick={() => this.handleDelete(tech)} type="button">Remover</button> 
-                            </li> //cada elemento precisa do key
+                        (
+                            <TechItem  
+                            key={tech} 
+                            tech={tech} 
+                            onDelete={() => this.handleDelete(tech)}
+                            />
                         )
+                        // ( // para colocar em mais linhas, use um parenteses
+                        //     <li key={tech}>
+                        //         {tech} 
+                        //         <button onClick={() => this.handleDelete(tech)} type="button">Remover</button> 
+                        //     </li> //cada elemento precisa do key
+                        // )
                     )} 
                 </ul>
                 <input 
