@@ -16,11 +16,49 @@ class TechList extends Component {
     state = { // todo o estado/STATE é imutável
         newTech: '', //variavel para armazenar o novo valor
         techs: [
-            'Node.JS',
-            'ReactJS',
-            'React Native',
+            // 'Node.JS',
+            // 'ReactJS',
+            // 'React Native',
         ]
     };
+
+    /**
+     * Ciclo de vida de um componente: 1
+     * Executado assim que o componente aparece na tela
+     */
+    componentDidMount() {
+        const techs = localStorage.getItem('techs');
+
+        if(techs) {
+            this.setState({ techs: JSON.parse(techs) });
+        }
+    }
+
+    /** 
+     * Ciclo de vida de um componente: 2
+     * O mais importante. Executado sempre que houver alteracoes nas props do componente ou no estado/state
+     * Visualiza no DevTools, Application, LocalStorage
+     */
+    // componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(_, prevState) { // nao será usado o primeiro argumento
+        // this.props, this.state
+        if (prevState.techs !== this.state.techs) {
+            localStorage.setItem( 'techs', JSON.stringify(this.state.techs)); //localstorage nao aceita array, transformado JSON
+        }
+    }
+
+    /**
+     * Ciclo de vida de um componente: 3
+     * Pouco usado. Executado quando o component deixa de existir
+     */
+    componenteWillUnmount(){
+        /*
+        Poderia ser usado no TechItem, 
+        por exemplo, em algum motivo se tivesse no componentDidMount um evento eventListener 
+        ele fica ouvindo o evento do usuario, o cursor por exemplo, ele não morre quando o componente finaliza.
+        entao WillUnmounte seria usada para limpar uma sujeira na aplicação e reseta o estado antes do uso
+        */
+    }
 
     /**
      * Toda a vez que criamos uma funcao propria dentro do componente no estilo de classe
@@ -131,4 +169,3 @@ export default TechList;
     };
     ...
   */
- 
