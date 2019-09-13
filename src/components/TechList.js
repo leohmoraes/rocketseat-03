@@ -38,6 +38,21 @@ class TechList extends Component {
         }); 
     }
 
+    /**
+     * Botao Remover, recebe um item e filtra todos os itens que diferem deste item. 
+     */
+    handleDelete = (tech) => {
+        // console.log("tech delete",tech)
+        this.setState({ 
+            techs: this.state.techs.filter(t => t !== tech) 
+        })
+    }
+
+    /**
+     * Observacoes
+     * onClick={this.handleDelete(tech)} = executa assim que percorre o item
+     * onClick={() => this.handleDelete(tech)} = usando uma arrow function, ele roda somente apos o click
+     */
     render() { // metodo obrigatorio
         // console.log(this.state);
 
@@ -47,7 +62,13 @@ class TechList extends Component {
                 <h1>{this.state.newTech}</h1>
                 <ul>
                     {this.state.techs.map(
-                        tech => <li key={tech}>{tech}</li> //cada elemento precisa do key
+                        tech => 
+                        ( // para colocar em mais linhas, use um parenteses
+                            <li key={tech}>
+                                {tech} 
+                                <button onClick={() => this.handleDelete(tech)} type="button">Remover</button> 
+                            </li> //cada elemento precisa do key
+                        )
                     )} 
                 </ul>
                 <input 
