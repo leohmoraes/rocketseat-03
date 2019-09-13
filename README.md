@@ -15,5 +15,5 @@ https://github.com/users/leohmoraes/projects/2
 * https://github.com/leohmoraes/rocketseat-04/releases/tag/09 - Propriedades do React
 * https://github.com/leohmoraes/rocketseat-04/releases/tag/10 - Default Props & PropTypes
 * https://github.com/leohmoraes/rocketseat-04/releases/tag/11 - Ciclo de vida do componente
-* https://github.com/leohmoraes/rocketseat-04/releases/tag/12 - Debugando React com DevTools
+* https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi - Debugando React com DevTools
 
