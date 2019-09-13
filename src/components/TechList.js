@@ -89,6 +89,7 @@ class TechList extends Component {
                         //     </li> //cada elemento precisa do key
                         // )
                     )} 
+                    <TechItem teste="testando sem a variavel tech" />
                 </ul>
                 <input 
                    type="text" 
@@ -108,3 +109,26 @@ export default TechList;
  * O React nao permite inserir dois elementos sem um elemento "pai"
  * Use um fragmento <> </> para criar um container de elementos
  */
+
+ /**
+    Duas formas de definir valores padroes em componentes em formato de classe
+    Fora da classe!
+    TechList.defaultProps = {
+        tech: 'Default item',
+    };
+
+    ...{
+    static defaultProps = {
+        tech: 'Default item',
+    };
+    ...
+    }
+
+    Declarar as propTypes no compenente formato de classe
+    ...{
+    static propTypes = {
+        // nao mostrou um exemplo
+    };
+    ...
+  */
+ 

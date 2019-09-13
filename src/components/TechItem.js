@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 /**
  * Este componente, como não vair estado/state e nem manipular alguma informacao,
  * pode ser usado no formato de function
@@ -21,6 +21,8 @@ import React from 'react';
  * onDelete={() => this.handleDelete(tech)}
  * ....
  */
+
+// function TechItem({ tech = 'default'÷, onDelete }) {
 function TechItem({ tech, onDelete }) {
   // para colocar em mais linhas, use um parenteses
   return (
@@ -32,5 +34,18 @@ function TechItem({ tech, onDelete }) {
     </li> // cada elemento precisa do key
   );
 }
+
+TechItem.defaultProps = {
+  tech: 'Default item',
+};
+
+/**
+ * Para validar as variaveis passadas, usa-se o prop-type
+ */
+TechItem.propTypes = {
+  // tech: PropTypes.string.isRequired, // nao precisa ser obrigatória pois tem um valor default
+  tech: PropTypes.string,
+  onDelete: PropTypes.func.isRequired,
+};
 
 export default TechItem;
